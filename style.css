@@ -1,0 +1,13 @@
+#hpBar {
+  width: 100%;
+  height: 30px;
+  background-color: #4CAF50;
+  line-height: 30px; /* To center it vertically */
+  color: white;
+  text-align: center;
+}
+
+#hpBarContainer {
+  width: 360px;
+  background-color: #ddd;
+}

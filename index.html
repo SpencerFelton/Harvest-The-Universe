@@ -3,6 +3,7 @@
   <head>
     <link rel = "stylesheet" href = "style.css"></script>
     <script type = "text/javascript" src = "jquery.js"></script>
+    <script type = "text/javascript" src = "loadAllResources.js"></script>
     <script type = "text/javascript" src = "player.js"></script>
     <script type = "text/javascript" src = "resource.js"></script>
     <script type = "text/javascript" src = "update.js"></script>
@@ -15,14 +16,24 @@
     </div>
     <div id = "gameContent">
       <div id = "resourceArea">
-        <div id = "goLeft"></div>
-        <div id = "resourceImg">
-          <img src = "resources/human.png">
+        <div id = "goLeft" class = "navArrow" style="visibility: hidden;">
+          <img src = "resources/goLeft.png">
         </div>
-        <div id = "hpBarContainer">
-          <div id = "hpBar"></div>
+        <div id = resourceContainer>
+          <div id = "resourceName">man</div>
+          <div id = "resourceImgContainer">
+            <img id = "resourceImg" src = "resources/human.png">
+          </div>
+          <div id = "hpBarContainer">
+            <div id = "hpBar"></div>
+          </div>
+          <div id = "resourceDefence">1</div>
+          <div id = "resourceReward">1</div>
         </div>
-        <div id = "goRight"></div>
+
+        <div id = "goRight" class = "navArrow" style="visibility: hidden;">
+          <img src = "resources/goRight.png">
+        </div>
       </div>
       <div id = "upgradeArea">
       </div>

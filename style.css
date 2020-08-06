@@ -11,3 +11,13 @@
   width: 360px;
   background-color: #ddd;
 }
+
+#resourceContainer {
+  width: 360px;
+  display: inline-block;
+}
+
+.navArrow {
+  width: 100px;
+  display:inline-block;
+}

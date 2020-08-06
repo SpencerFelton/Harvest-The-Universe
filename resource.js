@@ -1,10 +1,13 @@
 class Resource{
-  constructor(hp, defence, reward, url){
+  constructor(id, name, hp, defence, reward, url){
+    this.id = id;
+    this.name = name;
     this.maxHp = hp;
     this.currentHp = hp;
     this.defence = defence;
     this.reward = reward;
     this.url = url;
+    this.killed = false;
   }
 
    hpPercent(){
@@ -13,6 +16,9 @@ class Resource{
 
   die(player){
     player.setMoney(player.getMoney()+this.reward);
+    if(!this.killed){
+      this.killed = true;
+    }
   }
 
   setHp(damage){

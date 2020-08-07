@@ -8,12 +8,16 @@
 }
 
 #hpBarContainer {
+  margin: 0 auto;
   width: 360px;
   background-color: #ddd;
 }
 
-#resourceContainer {
-  width: 360px;
+#upgradeArea {
+}
+
+#interactable {
+  width: 100%;
   display: inline-block;
 }
 
@@ -37,6 +41,18 @@
   font-size: 25px;
 }
 
+#gameArea {
+  width: 570px;
+}
+
+#headingBar {
+  background-color: #e0e0eb;
+}
+
+#gameWindow {
+  display: inline-block;
+}
+
 .navArrow {
   width: 100px;
   height: 360px;
@@ -46,14 +62,4 @@
 h1 {
   display: inline-block;
   width: 50%;
-}
-
-header {
-  display: inline-block;
-  width: 100%;
-  background-color: : #e0e0eb;
-}
-
-body {
-  background-color: grey;
 }

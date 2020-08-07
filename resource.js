@@ -26,6 +26,10 @@ class Resource{
   }
 
   setHp(damage){
+    damage = player.harvestPower - this.defence;
+    if(damage <= 0){
+      damage = 0;
+    }
     this.currentHp -= damage;
     if(this.currentHp <= 0){
       this.currentHp = this.maxHp;

@@ -8,11 +8,14 @@ $("document").ready(function(){
   });
 
   $("#goRight").click(function(){
-    $("#goRight").css("visibility", "hidden");
     resourceIndex += 1;
+    currentResource = allResources[resourceIndex];
+    currentResource.spawn();
   });
 
   $("#goLeft").click(function(){
     resourceIndex -= 1;
+    currentResource = allResources[resourceIndex];
+    currentResource.spawn();
   })
 });

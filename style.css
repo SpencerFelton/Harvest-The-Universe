@@ -17,7 +17,43 @@
   display: inline-block;
 }
 
+#resourceName {
+  text-align: center;
+  font-size: 25px;
+}
+
+#resourceDefence {
+  text-align: center;
+  font-size: 25px;
+}
+
+#resourceReward {
+  text-align: center;
+  font-size: 25px;
+}
+
+
+#money {
+  font-size: 25px;
+}
+
 .navArrow {
   width: 100px;
+  height: 360px;
   display:inline-block;
+}
+
+h1 {
+  display: inline-block;
+  width: 50%;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  background-color: : #e0e0eb;
+}
+
+body {
+  background-color: grey;
 }

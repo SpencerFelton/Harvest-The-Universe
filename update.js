@@ -11,6 +11,13 @@ function update(){ // update all aspects of the game
   else{
     $("#goLeft").css("visibility", "hidden");
   }
+
+  if(currentResource.killed == false){
+    $("#goRight").css("visibility", "hidden");
+  }
+  else {
+    $("#goRight").css("visibility", "visible");
+  }
   updateResourceDisplay(currentResource);
 }
 
@@ -22,11 +29,11 @@ function loop(){
 
 
 function updateResourceDisplay(currentResource){
-  $("#money").text(player.getMoney());
+  $("#money").text("$" + player.getMoney());
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
   $("#hpBar").text(currentResource.currentHp);
   $("#hpBar").css("width",currentResource.hpPercent()+"%");
-  $("#resourceDefence").text(currentResource.defence);
-  $("#resourceReward").text(currentResource.reward);
+  $("#resourceDefence").text("Defence: " + currentResource.defence);
+  $("#resourceReward").text("Reward: $" + currentResource.reward);
 }

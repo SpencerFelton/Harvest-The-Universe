@@ -1,7 +1,8 @@
 var resourceLocation = "resources/"
 resourceInfo = [
-  [0, "man", 10, 0, 1, resourceLocation+"human.png"],
-  [1, "Tall Man", 100, 1, 5, resourceLocation+"slinkyHuman.png"]
+  [0, "Man", 10, 0, 1, resourceLocation+"human.png"],
+  [1, "Long Man", 100, 1, 5, resourceLocation+"slinkyHuman.png"],
+  [2, "Longest Man", 1000, 1, 10, resourceLocation+"longestBoi.png"]
 ]
 
 function loadResources(array){

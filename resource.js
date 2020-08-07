@@ -14,6 +14,10 @@ class Resource{
     return (this.currentHp/this.maxHp) * 100;
   }
 
+  spawn(){
+    this.currentHp = this.maxHp;
+  }
+
   die(player){
     player.setMoney(player.getMoney()+this.reward);
     if(!this.killed){

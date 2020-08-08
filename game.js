@@ -1,6 +1,7 @@
 $("document").ready(function(){
 
   $("#resourceImg").click(function(){
+    console.log("slkdfj");
     currentResource.setHp(player.getHarvestPower());
     if(currentResource.killed){
       $("#goRight").css("visibility", "visible");

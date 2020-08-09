@@ -30,6 +30,7 @@ function loop(){
 
 function updateResourceDisplay(currentResource){
   $("#money").text("$" + player.getMoney());
+  $("#harvestPower").text("Harvesting Power: " + player.getHarvestPower());
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
   $("#hpBar").text(currentResource.currentHp);

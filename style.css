@@ -14,10 +14,13 @@
 }
 
 #upgradeArea {
+  height: 478px;
+  width: 256px;
+  flex: 1 0 auto;
+  display: inline-flex;
 }
 
 #interactable {
-  width: 100%;
   display: inline-block;
 }
 
@@ -36,13 +39,12 @@
   font-size: 25px;
 }
 
-
 #money {
   font-size: 25px;
 }
 
 #gameArea {
-  width: 570px;
+  flex: 0 0 570px;
 }
 
 #headingBar {
@@ -50,7 +52,13 @@
 }
 
 #gameWindow {
-  display: inline-block;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#statsWrapper {
+  width: 570px;
 }
 
 .navArrow {

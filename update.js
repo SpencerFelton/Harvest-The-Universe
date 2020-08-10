@@ -1,6 +1,6 @@
 var player = new Player(0,1);
 var resourceIndex = 0
-var allResources = loadResources(resourceInfo);
+var allResources = loadResources(resourceInfoJSON);
 
 var currentResource = allResources[resourceIndex];
 function update(){ // update all aspects of the game

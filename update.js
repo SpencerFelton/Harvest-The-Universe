@@ -5,14 +5,14 @@ var allResources = loadResources(resourceInfoJSON);
 var currentResource = allResources[resourceIndex];
 function update(){ // update all aspects of the game
   currentResource = allResources[resourceIndex];
-  if(currentResource.id >= 1){
+  if(currentResource.id >= 1){ // allow the player to navigate back through previous resources
     $("#goLeft").css("visibility", "visible");
   }
-  else{
+  else{ // if at the 1st resource, hide the left arrow
     $("#goLeft").css("visibility", "hidden");
   }
 
-  if(currentResource.killed == false){
+  if(currentResource.killed == false){ // only allow killed resources to display the right arrow
     $("#goRight").css("visibility", "hidden");
   }
   else {
@@ -21,7 +21,7 @@ function update(){ // update all aspects of the game
   updateResourceDisplay(currentResource);
 }
 
-setInterval(loop, 16)
+setInterval(loop, 16) // 1000 / 60 = 16, so 60 updates per second
 function loop(){
   update();
 

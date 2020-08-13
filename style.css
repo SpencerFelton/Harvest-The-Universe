@@ -15,9 +15,7 @@
 
 #upgradeArea {
   height: 478px;
-  width: 256px;
-  flex: 1 0 auto;
-  display: inline-flex;
+  width: calc(100% - 570px);
 }
 
 #interactable {
@@ -44,7 +42,7 @@
 }
 
 #gameArea {
-  flex: 0 0 570px;
+  width: 570px;
 }
 
 #headingBar {
@@ -62,7 +60,7 @@
 }
 
 #statsWrapper {
-  width: 570px;
+  flex: 0 0 570px;
 }
 
 .navArrow {

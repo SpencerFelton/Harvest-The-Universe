@@ -3,6 +3,8 @@
   <head>
     <link rel = "stylesheet" href = "style.css"></script>
     <script type = "text/javascript" src = "jquery.js"></script>
+    <script type = "text/javascript" src = "loadAllUpgrades.js"></script>
+    <script type = "text/javascript" src = "upgrades.js"></script>
     <script type = "text/javascript" src = "loadAllResources.js"></script>
     <script type = "text/javascript" src = "player.js"></script>
     <script type = "text/javascript" src = "resource.js"></script>
@@ -16,6 +18,8 @@
     </div>
     <div id = "gameWindow">
       <div id = "gameArea">
+
+
         <div id = "resourceName">Name</div>
         <div id = "interactable">
           <span id = "goLeft" class = "navArrow" style="visibility: hidden;">
@@ -28,6 +32,8 @@
             <img src = "resources/goRight.png">
           </span>
         </div>
+
+
         <div id = "resourceInfo">
           <div id = "hpBarContainer">
             <div id = "hpBar"></div>
@@ -36,15 +42,29 @@
           <div id = "resourceReward">1</div>
         </div>
       </div>
+
+
       <div id = "upgradeArea">
-        <h1>hi</h1>
+        <div id =  "harvestPlusUpgradeWrapper">
+          <img src = "resources/upgradeIcons/harvestPlusUpgrade.png" id = "harvestPlusUpgrade">
+          <div id = "harvestPlusUpgradeCost"></div>
+          <div id = "harvestPlusUpgradeEffect"></div>
+        </div>
+
+        <div id =  "harvestPlusUpgradePlusUpgradeWrapper">
+          <img src = "resources/upgradeIcons/harvestPlusUpgradePlusUpgrade.png" id = "harvestPlusUpgradePlusUpgrade">
+          <div id = "harvestPlusUpgradePlusUpgradeCost"></div>
+          <div id = "harvestPlusUpgradePlusUpgradeEffect"></div>
+        </div>
       </div>
+
+
       <div id = "statsWrapper">
         <div id =  "harvestPower"></div>
         <div id =  "harvestWrapper">
           <img src = "resources/harvestIcon.png">
         </div>
       </div>
-    </div>
+
   </body>
 </html>

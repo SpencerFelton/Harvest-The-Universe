@@ -1,6 +1,8 @@
 var player = new Player(0,1);
 var resourceIndex = 0
 var allResources = loadResources(resourceInfoJSON);
+var allUpgrades = loadUpgrades(upgradeInfoJSON);
+
 
 var currentResource = allResources[resourceIndex];
 function update(){ // update all aspects of the game
@@ -27,14 +29,32 @@ function loop(){
 
 }
 
-
-function updateResourceDisplay(currentResource){
+function updatePlayerInfo(){
   $("#money").text("$" + player.getMoney());
-  $("#harvestPower").text("Harvesting Power: " + player.getHarvestPower());
+  $("#harvestPower").text("Harvesting Power (HP): " + player.getHarvestPower());
+}
+
+function updateResourceInfo(){
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
   $("#hpBar").text(currentResource.currentHp);
   $("#hpBar").css("width",currentResource.hpPercent()+"%");
   $("#resourceDefence").text("Defence: " + currentResource.defence);
   $("#resourceReward").text("Reward: $" + currentResource.reward);
+}
+
+function updateUpgradeInfo(){
+  $("#harvestPlusUpgradeCost").text("Cost: $ " + allUpgrades[0].getCost());
+  $("#harvestPlusUpgradeEffect").text("+" + allUpgrades[0].increment + " to HP");
+
+  $("#harvestPlusUpgradePlusUpgradeCost").text("Cost: $ " + allUpgrades[1].getCost());
+  $("#harvestPlusUpgradePlusUpgradeEffect").text("+" + allUpgrades[1].increment + " to the Harvest Power Upgrade")
+}
+
+
+function updateResourceDisplay(currentResource){
+  updatePlayerInfo();
+  updateResourceInfo();
+  updateUpgradeInfo();
+
 }

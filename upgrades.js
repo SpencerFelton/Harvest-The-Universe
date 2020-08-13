@@ -1,14 +1,18 @@
 class Upgrade {
-  constructor(name, cost, url) {
+  constructor(id, name, cost) {
+    this.id = id;
     this.name = name;
     this.cost = cost;
-    this.url = url;
+  }
+
+  getCost(){
+    return this.cost;
   }
 }
 
 class HarvestUpgradePowerPlus extends Upgrade {
-  constructor(name, cost, url){
-    super(name, cost, url);
+  constructor(id, name, cost){
+    super(id, name, cost);
     this.increment = 1;
   }
 
@@ -16,8 +20,35 @@ class HarvestUpgradePowerPlus extends Upgrade {
     player.setHarvestPower(player.getHarvestPower() + value);
   }
 
-  costIncrease(this.cost){
+  costIncrease(){
     this.cost = this.cost * 1.5;
   }
+}
+
+class HarvestUpgradePowerPlusUpgrade extends Upgrade {
+  constructor(id, name, cost){
+    super(id, name, cost);
+    this.increment = 1;
+  }
+
+  effect(upgrade, value){
+    upgrade.increment += this.increment;
+  }
+
+  costIncrease(){
+    this.cost = this.cost * 1.5;
+  }
+}
+
+class HarvestUpgradePowerMulti extends Upgrade {
+  constructor(id, name, cost){
+    super(id, name, cost);
+    this.increment = 2;
+  }
+
+  effect(player, value){
+    player.setHarvestPower(player.getHarvestPower() *= value);
+  }
+
 
 }

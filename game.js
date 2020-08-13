@@ -21,13 +21,23 @@ $("document").ready(function(){
   });
 
   $("#harvestPlusUpgrade").click(function(){
-    if(player.getMoney() >= allUpgrades[0].getCost()){
-      player.money -= allUpgrades[0].getCost();
-      upgrade.effect(player, 1);
+    var upgrade = allUpgrades[0];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.money -= upgrade.getCost();
+      upgrade.effect(player, upgrade.increment);
       upgrade.costIncrease();
     }
     else {
       console.log("no money innit");
     }
   });
+
+  $("#harvestPlusUpgradePlusUpgradeWrapper").click(function(){
+    var upgrade = allUpgrades[1];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.money -= upgrade.getCost();
+      allUpgrades[0].increment += upgrade.increment;
+      upgrade.costIncrease();
+    }
+  })
 });

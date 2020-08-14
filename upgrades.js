@@ -1,4 +1,4 @@
-class Upgrade {
+class Upgrade { // base class with get method
   constructor(id, name, cost) {
     this.id = id;
     this.name = name;
@@ -9,7 +9,7 @@ class Upgrade {
     return this.cost;
   }
 }
-
+// Upgrade classes each correspond to a single upgrade
 class HarvestUpgradePowerPlus extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);

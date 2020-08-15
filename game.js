@@ -39,5 +39,14 @@ $("document").ready(function(){
       allUpgrades[0].increment += upgrade.increment;
       upgrade.costIncrease();
     }
+  });
+
+  $("#harvestCritChanceUpgrade").click(function(){
+    var upgrade = allUpgrades[2];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.money -= upgrade.getCost();
+      player.setCritChance(player.getCritChance() + upgrade.critChance);
+      upgrade.costIncrease();
+    }
   })
 });

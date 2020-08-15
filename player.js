@@ -2,6 +2,7 @@ class Player {
   constructor(money, harvestPower){
     this.money = money;
     this.harvestPower = harvestPower;
+    this.critChance = 0;
   }
 
   getMoney(){
@@ -18,6 +19,14 @@ class Player {
 
   setHarvestPower(value){
     this.harvestPower = value;
+  }
+
+  getCritChance(){
+    return this.critChance;
+  }
+
+  setCritChance(critChance){
+    this.critChance = critChance;
   }
 
 }

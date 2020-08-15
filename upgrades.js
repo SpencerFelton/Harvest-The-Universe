@@ -40,6 +40,21 @@ class HarvestUpgradePowerPlusUpgrade extends Upgrade {
   }
 }
 
+class HarvestUpgradeCritChance extends Upgrade {
+  constructor(id, name, cost){
+    super(id, name, cost);
+    this.critChance = 1;
+  }
+
+  effect(player, value){
+    player.setCritChance(player.getCritChance() + value);
+  }
+
+  costIncrease(){
+    this.cost = this.cost * 1.5;
+  }
+}
+
 class HarvestUpgradePowerMulti extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
@@ -50,5 +65,7 @@ class HarvestUpgradePowerMulti extends Upgrade {
     player.setHarvestPower(player.getHarvestPower() *= value);
   }
 
-
+  costIncrease(){
+    this.cost = this.cost * 1.5;
+  }
 }

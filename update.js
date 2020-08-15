@@ -26,18 +26,18 @@ function update(){ // update all aspects of the game
 setInterval(loop, 16) // 1000 / 60 = 16, so 60 updates per second
 function loop(){
   update();
-
 }
 
 function updatePlayerInfo(){
   $("#money").text("$" + player.getMoney());
   $("#harvestPower").text("Harvesting Power (HP): " + player.getHarvestPower());
+  $("#critChance").text("Crit Chance: " + player.getCritChance() + "%");
 }
 
 function updateResourceInfo(){
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
-  $("#hpBar").text(currentResource.currentHp);
+  $("#hpValue").text(currentResource.currentHp);
   $("#hpBar").css("width",currentResource.hpPercent()+"%");
   $("#resourceDefence").text("Defence: " + currentResource.defence);
   $("#resourceReward").text("Reward: $" + currentResource.reward);
@@ -48,7 +48,10 @@ function updateUpgradeInfo(){
   $("#harvestPlusUpgradeEffect").text("+" + allUpgrades[0].increment + " to HP");
 
   $("#harvestPlusUpgradePlusUpgradeCost").text("Cost: $ " + allUpgrades[1].getCost());
-  $("#harvestPlusUpgradePlusUpgradeEffect").text("+" + allUpgrades[1].increment + " to the Harvest Power Upgrade")
+  $("#harvestPlusUpgradePlusUpgradeEffect").text("+" + allUpgrades[1].increment + " to the Harvest Power Upgrade");
+
+  $("#harvestCritChanceUpgradeCost").text("Cost: $ " + allUpgrades[2].getCost());
+  $("#harvestCritChanceUpgradeEffect").text("+" + allUpgrades[2].critChance + " % chance to score a critical hit");
 }
 
 

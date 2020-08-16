@@ -1,8 +1,14 @@
 $("document").ready(function(){
 
   $("#resourceImg").click(function(){
-    console.log("slkdfj");
-    currentResource.setHp(player.getHarvestPower());
+    if(player.rollCrit()){
+      console.log("crit");
+      console.log(player.getHarvestPower() * player.critDmg);
+      currentResource.setHp(player.getHarvestPower() * player.critDmg);
+    }
+    else{
+      currentResource.setHp(player.getHarvestPower());
+    }
     if(currentResource.killed){
       $("#goRight").css("visibility", "visible");
     }

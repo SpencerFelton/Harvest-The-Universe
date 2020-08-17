@@ -29,7 +29,7 @@ $("document").ready(function(){
   $("#harvestPlusUpgrade").click(function(){
     var upgrade = allUpgrades[0]; // more convenient to assign upgrade to this nicer variable name
     if(player.getMoney() >= upgrade.getCost()){
-      player.money -= upgrade.getCost();
+      player.setMoney(player.getMoney() - upgrade.getCost());
       upgrade.effect(player, upgrade.increment);
       upgrade.costIncrease();
     }
@@ -41,8 +41,8 @@ $("document").ready(function(){
   $("#harvestPlusUpgradePlusUpgradeWrapper").click(function(){
     var upgrade = allUpgrades[1];
     if(player.getMoney() >= upgrade.getCost()){
-      player.money -= upgrade.getCost();
-      allUpgrades[0].increment += upgrade.increment;
+      player.setMoney(player.getMoney() - upgrade.getCost());
+      upgrade.effect(allUpgrades[0], upgrade.increment);
       upgrade.costIncrease();
     }
   });
@@ -50,7 +50,7 @@ $("document").ready(function(){
   $("#harvestCritChanceUpgrade").click(function(){
     var upgrade = allUpgrades[2];
     if(player.getMoney() >= upgrade.getCost()){
-      player.money -= upgrade.getCost();
+      player.setMoney(player.getMoney() - upgrade.getCost());
       player.setCritChance(player.getCritChance() + upgrade.critChance);
       upgrade.costIncrease();
     }
@@ -59,8 +59,8 @@ $("document").ready(function(){
   $("#harvestMultiUpgrade").click(function(){
     var upgrade = allUpgrades[3];
     if(player.getMoney() >= upgrade.getCost()){
-      player.money -= upgrade.getCost();
-      player.harvestPower *= upgrade.increment;
+      player.setMoney(player.getMoney() - upgrade.getCost());
+      upgrade.effect(player, upgrade.increment);
       upgrade.costIncrease();
     }
   })

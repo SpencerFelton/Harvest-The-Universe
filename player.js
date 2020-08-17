@@ -1,9 +1,16 @@
 class Player {
   constructor(money, harvestPower){
     this.money = money;
-    this.harvestPower = harvestPower;
+    this.baseHarvesterPower = harvestPower;
+    this.clickMult = 1;
+    this.clickIncr = 0;
+    this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult;
     this.critChance = 0;
     this.critDmg = 2;
+  }
+
+  updateHarvestPower(){
+    this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult;
   }
 
   getMoney(){

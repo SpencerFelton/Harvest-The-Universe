@@ -17,7 +17,8 @@ class HarvestUpgradePowerPlus extends Upgrade {
   }
 
   effect(player, value){
-    player.setHarvestPower(player.getHarvestPower() + value);
+    player.clickIncr += value;
+    player.updateHarvestPower();
   }
 
   costIncrease(){
@@ -62,7 +63,8 @@ class HarvestUpgradePowerMulti extends Upgrade {
   }
 
   effect(player, value){
-    player.setHarvestPower(player.getHarvestPower() *= value);
+    player.clickMult *= value;
+    player.updateHarvestPower();
   }
 
   costIncrease(){

@@ -54,5 +54,14 @@ $("document").ready(function(){
       player.setCritChance(player.getCritChance() + upgrade.critChance);
       upgrade.costIncrease();
     }
+  });
+
+  $("#harvestMultiUpgrade").click(function(){
+    var upgrade = allUpgrades[3];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.money -= upgrade.getCost();
+      player.harvestPower *= upgrade.increment;
+      upgrade.costIncrease();
+    }
   })
 });

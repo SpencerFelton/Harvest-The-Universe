@@ -52,6 +52,9 @@ function updateUpgradeInfo(){
 
   $("#harvestCritChanceUpgradeCost").text("Cost: $ " + allUpgrades[2].getCost());
   $("#harvestCritChanceUpgradeEffect").text("+" + allUpgrades[2].critChance + " % chance to score a critical hit");
+
+  $("#harvestMultiUpgradeCost").text("Cost: $ " + allUpgrades[3].getCost());
+  $("#harvestMultiUpgradeEffect").text("x" + allUpgrades[3].increment + " multiplier to click Harvest Power");
 }
 
 

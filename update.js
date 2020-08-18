@@ -2,6 +2,7 @@ var player = new Player(0,1);
 var resourceIndex = 0
 var allResources = loadResources(resourceInfoJSON);
 var allUpgrades = loadUpgrades(upgradeInfoJSON);
+var updateCounter = 0;
 
 
 var currentResource = allResources[resourceIndex];
@@ -20,7 +21,12 @@ function update(){ // update all aspects of the game
   else {
     $("#goRight").css("visibility", "visible");
   }
+  if(updateCounter == 60){
+    updateCounter = 0;
+  }
+  player.autoclick(updateCounter);
   updateResourceDisplay(currentResource);
+  updateCounter += 1;
 }
 
 setInterval(loop, 16) // 1000 / 60 = 16, so 60 updates per second
@@ -55,6 +61,12 @@ function updateUpgradeInfo(){
 
   $("#harvestMultiUpgradeCost").text("Cost: $ " + allUpgrades[3].getCost());
   $("#harvestMultiUpgradeEffect").text("x" + allUpgrades[3].increment + " multiplier to click Harvest Power");
+
+  $("#harvestAutoClickUpgradeCost").text("Cost: $ " + allUpgrades[4].getCost() + " Level " + allUpgrades[4].level + "/" + allUpgrades[4].maxLevel);
+  $("#harvestAutoClickUpgradeEffect").text("Autoclicks. Current : " + allUpgrades[4].level +"/s");
+
+  $("#harvestAutoClickPowerUpgradeCost").text("Cost: $ " + allUpgrades[5].getCost());
+  $("#harvestAutoClickPowerUpgradeEffect").text("Multiplies autoclick damage by " + allUpgrades[5].increment);
 }
 
 
@@ -62,5 +74,4 @@ function updateResourceDisplay(currentResource){
   updatePlayerInfo();
   updateResourceInfo();
   updateUpgradeInfo();
-
 }

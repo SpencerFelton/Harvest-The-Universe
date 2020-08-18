@@ -21,7 +21,7 @@
 #upgradeArea {
   height: 478px;
   width: calc(100% - 570px);
-  //display: flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -65,6 +65,11 @@
 
 #statsWrapper {
   flex: 0 0 570px;
+}
+
+.upgrade {
+  width: 100px;
+  margin: 50px;;
 }
 
 .navArrow {

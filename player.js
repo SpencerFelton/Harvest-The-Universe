@@ -7,6 +7,8 @@ class Player {
     this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult;
     this.critChance = 0;
     this.critDmg = 2;
+    this.autoClicks = 0;
+    this.autoMult = 1
   }
 
   updateHarvestPower(){
@@ -44,6 +46,23 @@ class Player {
     }
     else {
       return false;
+    }
+  }
+
+  autoclick(counter){
+    var bexf = Math.round(60/this.autoClicks); //bexf = Buy Every x Frames
+    if(this.autoClicks == 0){
+      //pass
+    }
+    else {
+      if(counter%bexf == 0){
+        console.log(counter);
+        currentResource.setHp(this.getHarvestPower() * this.autoMult);
+        if(currentResource.killed){
+          $("#goRight").css("visibility", "visible");
+        }
+        //simulate a click and allow access to next resource
+      }
     }
   }
 

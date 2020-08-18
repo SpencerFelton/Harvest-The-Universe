@@ -63,5 +63,23 @@ $("document").ready(function(){
       upgrade.effect(player, upgrade.increment);
       upgrade.costIncrease();
     }
+  });
+
+  $("#HarvestUpgradeAutoClick").click(function(){
+    var upgrade = allUpgrades[4];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.setMoney(player.getMoney() - upgrade.getCost());
+      upgrade.effect(player);
+      upgrade.costIncrease();
+    }
+  });
+
+  $("#HarvestUpgradeAutoClickPower").click(function(){
+    var upgrade = allUpgrades[5];
+    if(player.getMoney() >= upgrade.getCost()){
+      player.setMoney(player.getMoney() - upgrade.getCost());
+      upgrade.effect(player, upgrade.increment);
+      upgrade.costIncrease();
+    }
   })
 });

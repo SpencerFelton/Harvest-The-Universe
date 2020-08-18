@@ -71,3 +71,35 @@ class HarvestUpgradePowerMulti extends Upgrade {
     this.cost = this.cost * 1.5;
   }
 }
+
+class HarvestUpgradeAutoClick extends Upgrade {
+  constructor(id, name, cost){
+    super(id, name, cost);
+    this.level = 0;
+    this.maxLevel = 60;
+  }
+
+  effect(player){
+    this.level += 1;
+    player.autoClicks = this.level;
+  }
+
+  costIncrease(){
+    this.cost = this.cost * 1.5;
+  }
+}
+
+class HarvestUpgradeAutoClickPower extends Upgrade {
+  constructor(id, name, cost){
+    super(id, name, cost);
+    this.increment = 1.1;
+  }
+
+  effect(player){
+    player.autoMult *= this.increment;
+  }
+
+  costIncrease(){
+    this.cost = this.cost * 1.5;
+  }
+}

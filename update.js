@@ -24,7 +24,7 @@ function update(){ // update all aspects of the game
   if(updateCounter == 60){
     updateCounter = 0;
   }
-  player.autoclick(updateCounter);
+  player.autoclick(updateCounter); 
   updateResourceDisplay(currentResource);
   updateCounter += 1;
 }

@@ -55,8 +55,7 @@ class Player {
       //pass
     }
     else {
-      if(counter%bexf == 0){
-        console.log(counter);
+      if(counter%bexf == 0){ // every bexf"th" frame, simulate a click, check for death and reward accordingly
         currentResource.setHp(this.getHarvestPower() * this.autoMult);
         if(currentResource.killed){
           $("#goRight").css("visibility", "visible");

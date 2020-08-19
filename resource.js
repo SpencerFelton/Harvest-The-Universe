@@ -10,7 +10,7 @@ class Resource{
     this.killed = false;
   }
 
-   hpPercent(){
+  hpPercent(){
     return (this.currentHp/this.maxHp) * 100;
   }
 

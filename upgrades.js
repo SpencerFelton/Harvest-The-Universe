@@ -92,7 +92,7 @@ class HarvestUpgradeAutoClick extends Upgrade {
 class HarvestUpgradeAutoClickPower extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
-    this.increment = 1.1;
+    this.increment = 1.1; // multiply autoclick power by 1.1 -- less effective than manual clicks to encourage some active play
   }
 
   effect(player){

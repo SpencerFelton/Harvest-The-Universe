@@ -24,9 +24,9 @@ function update(){ // update all aspects of the game
   if(updateCounter == 60){
     updateCounter = 0;
   }
-  player.autoclick(updateCounter); 
+  player.autoclick(updateCounter); // simulate a click by the player - if 0 autoclick upgrades then does nothing
   updateResourceDisplay(currentResource);
-  updateCounter += 1;
+  updateCounter += 1; // for tracking when to perform an autoclick
 }
 
 setInterval(loop, 16) // 1000 / 60 = 16, so 60 updates per second

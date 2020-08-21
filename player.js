@@ -39,7 +39,7 @@ class Player {
     this.critChance = critChance;
   }
 
-  rollCrit(){
+  rollCrit(){ // generate a random number to perform a crit check
     var crit = Math.floor(Math.random()*100);
     if(crit < this.critChance){
       return true;

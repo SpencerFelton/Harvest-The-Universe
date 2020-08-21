@@ -7,7 +7,7 @@ upgradeInfoJSON = [
   {"id":5, "name":"Harvest Upgrade Auto Click Power", "cost": 1}
 ]
 
-function loadUpgrades(array){
+function loadUpgrades(array){ // should only run once when the page is first loaded
   var allUpgrades = []
   for (upgrades in array){
     var currentUpgrade = upgradeInfoJSON[upgrades];

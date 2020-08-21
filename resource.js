@@ -7,8 +7,10 @@ class Resource{
     this.defence = defence;
     this.reward = reward;
     this.url = url;
-    this.killed = false;
+    this.killed = false; // resource can only be "killed" once to unlock the next resource
   }
+
+
 
   hpPercent(){
     return (this.currentHp/this.maxHp) * 100;
@@ -25,7 +27,7 @@ class Resource{
     }
   }
 
-  setHp(damage){
+  setHp(damage){ // set the currentHp to damage-defence, kill if hp is less than 0
     damage -= this.defence;
     if(damage <= 0){
       damage = 0;

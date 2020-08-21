@@ -21,7 +21,7 @@ function update(){ // update all aspects of the game
   else {
     $("#goRight").css("visibility", "visible");
   }
-  if(updateCounter == 60){
+  if(updateCounter == 60){ // running at 60fps, so reset back to 0 for autoclick purposes
     updateCounter = 0;
   }
   player.autoclick(updateCounter); // simulate a click by the player - if 0 autoclick upgrades then does nothing

@@ -8,6 +8,10 @@ class Upgrade { // base class with get method
   getCost(){
     return this.cost;
   }
+
+  costIncrease(multiplier){ // parent method - overloaded at the moment in child classes
+    this.cost *= multiplier;
+  }
 }
 // Upgrade classes each correspond to a single upgrade
 class HarvestUpgradePowerPlus extends Upgrade {

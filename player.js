@@ -4,7 +4,7 @@ class Player {
     this.baseHarvesterPower = harvestPower;
     this.clickMult = 1;
     this.clickIncr = 0;
-    this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult;
+    this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult; // total harvest power - maybe make this a class function instead of an attribute
     this.critChance = 0;
     this.critDmg = 2;
     this.autoClicks = 0;

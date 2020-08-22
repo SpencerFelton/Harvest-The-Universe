@@ -26,6 +26,7 @@ $("document").ready(function(){
     currentResource.spawn();
   });
 
+  //onclick events for each upgrade
   $("#harvestPlusUpgrade").click(function(){
     var upgrade = allUpgrades[0]; // more convenient to assign upgrade to this nicer variable name
     if(player.getMoney() >= upgrade.getCost()){

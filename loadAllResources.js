@@ -7,7 +7,7 @@ resourceInfoJSON = [
   {"id":3, "name":"Buff Fella", "hp":10000, "defence":1, "reward":100, "url":resourceLocation+"legDay.png"}
 ]
 
-function loadResources(array){
+function loadResources(array){ // create Resource objects from an array of json objects, returns an array of Resources
   var allResources = []
   for (var i = 0; i < array.length; i++){
     var resource = new Resource(array[i].id, array[i].name, array[i].hp, array[i].defence, array[i].reward, array[i].url)

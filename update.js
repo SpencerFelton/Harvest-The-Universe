@@ -49,7 +49,7 @@ function updateResourceInfo(){
   $("#resourceReward").text("Reward: $" + currentResource.reward);
 }
 
-function updateUpgradeInfo(){
+function updateUpgradeInfo(){ // update cost / description info for each upgrade
   $("#harvestPlusUpgradeCost").text("Cost: $ " + allUpgrades[0].getCost());
   $("#harvestPlusUpgradeEffect").text("+" + allUpgrades[0].increment + " to HP");
 

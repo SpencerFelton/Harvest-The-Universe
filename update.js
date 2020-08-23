@@ -4,6 +4,14 @@ var allResources = loadResources(resourceInfoJSON);
 var allUpgrades = loadUpgrades(upgradeInfoJSON);
 var updateCounter = 0;
 
+function toENotation(number){ // if a number is less than 1 million, leave it as an integer, otherwise convert it to e notation
+  if (number <= 1000000) {
+    return number.toFixed(0);
+  }
+  else {
+    return number.toPrecision(3);
+  }
+}
 
 var currentResource = allResources[resourceIndex];
 function update(){ // update all aspects of the game
@@ -50,22 +58,22 @@ function updateResourceInfo(){
 }
 
 function updateUpgradeInfo(){ // update cost / description info for each upgrade
-  $("#harvestPlusUpgradeCost").text("Cost: $ " + allUpgrades[0].getCost());
-  $("#harvestPlusUpgradeEffect").text("+" + allUpgrades[0].increment + " to HP");
+  $("#harvestPlusUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[0].getCost()));
+  $("#harvestPlusUpgradeEffect").text("+" + toENotation(allUpgrades[0].increment) + " to HP");
 
-  $("#harvestPlusUpgradePlusUpgradeCost").text("Cost: $ " + allUpgrades[1].getCost());
-  $("#harvestPlusUpgradePlusUpgradeEffect").text("+" + allUpgrades[1].increment + " to the Harvest Power Upgrade");
+  $("#harvestPlusUpgradePlusUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[1].getCost()));
+  $("#harvestPlusUpgradePlusUpgradeEffect").text("+" + toENotation(allUpgrades[1].increment) + " to the Harvest Power Upgrade");
 
-  $("#harvestCritChanceUpgradeCost").text("Cost: $ " + allUpgrades[2].getCost());
+  $("#harvestCritChanceUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[2].getCost()));
   $("#harvestCritChanceUpgradeEffect").text("+" + allUpgrades[2].critChance + " % chance to score a critical hit");
 
-  $("#harvestMultiUpgradeCost").text("Cost: $ " + allUpgrades[3].getCost());
+  $("#harvestMultiUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[3].getCost()));
   $("#harvestMultiUpgradeEffect").text("x" + allUpgrades[3].increment + " multiplier to click Harvest Power");
 
-  $("#harvestAutoClickUpgradeCost").text("Cost: $ " + allUpgrades[4].getCost() + " Level " + allUpgrades[4].level + "/" + allUpgrades[4].maxLevel);
+  $("#harvestAutoClickUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[4].getCost()) + " Level " + allUpgrades[4].level + "/" + allUpgrades[4].maxLevel);
   $("#harvestAutoClickUpgradeEffect").text("Autoclicks. Current : " + allUpgrades[4].level +"/s");
 
-  $("#harvestAutoClickPowerUpgradeCost").text("Cost: $ " + allUpgrades[5].getCost());
+  $("#harvestAutoClickPowerUpgradeCost").text("Cost: $ " + toENotation(allUpgrades[5].getCost()));
   $("#harvestAutoClickPowerUpgradeEffect").text("Multiplies autoclick damage by " + allUpgrades[5].increment);
 }
 

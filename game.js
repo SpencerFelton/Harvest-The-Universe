@@ -68,7 +68,10 @@ $("document").ready(function(){
 
   $("#HarvestUpgradeAutoClick").click(function(){
     var upgrade = allUpgrades[4];
-    if(player.getMoney() >= upgrade.getCost()){
+    if(upgrade.level == upgrade.maxLevel){
+      //Do nothing
+    }
+    else if(player.getMoney() >= upgrade.getCost()){
       player.setMoney(player.getMoney() - upgrade.getCost());
       upgrade.effect(player);
       upgrade.costIncrease();

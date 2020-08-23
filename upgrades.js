@@ -10,7 +10,7 @@ class Upgrade { // base class with get method
   }
 
   costIncrease(multiplier){ // parent method - overloaded at the moment in child classes
-    this.cost *= multiplier;
+    return this.cost *= multiplier;
   }
 }
 // Upgrade classes each correspond to a single upgrade
@@ -18,6 +18,7 @@ class HarvestUpgradePowerPlus extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
     this.increment = 1;
+    this.costMult = 1.5;
   }
 
   effect(player, value){
@@ -26,7 +27,7 @@ class HarvestUpgradePowerPlus extends Upgrade {
   }
 
   costIncrease(){
-    this.cost = this.cost * 1.5;
+    this.cost = super.costIncrease(this.costMult);
   }
 }
 
@@ -34,6 +35,7 @@ class HarvestUpgradePowerPlusUpgrade extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
     this.increment = 1;
+    this.costMult = 2;
   }
 
   effect(upgrade, value){
@@ -41,7 +43,7 @@ class HarvestUpgradePowerPlusUpgrade extends Upgrade {
   }
 
   costIncrease(){
-    this.cost = this.cost * 1.5;
+    this.cost = super.costIncrease(this.costMult);
   }
 }
 
@@ -49,6 +51,7 @@ class HarvestUpgradeCritChance extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
     this.critChance = 1;
+    this.costMult = 5;
   }
 
   effect(player, value){
@@ -56,7 +59,7 @@ class HarvestUpgradeCritChance extends Upgrade {
   }
 
   costIncrease(){
-    this.cost = this.cost * 1.5;
+    this.cost = super.costIncrease(this.costMult)
   }
 }
 
@@ -64,6 +67,7 @@ class HarvestUpgradePowerMulti extends Upgrade {
   constructor(id, name, cost){
     super(id, name, cost);
     this.increment = 2;
+    this.costMult = 4;
   }
 
   effect(player, value){
@@ -72,7 +76,7 @@ class HarvestUpgradePowerMulti extends Upgrade {
   }
 
   costIncrease(){
-    this.cost = this.cost * 1.5;
+    this.cost = super.costIncrease(this.costMult);
   }
 }
 
@@ -81,6 +85,7 @@ class HarvestUpgradeAutoClick extends Upgrade {
     super(id, name, cost);
     this.level = 0;
     this.maxLevel = 60;
+    this.costMult = 3;
   }
 
   effect(player){
@@ -89,7 +94,7 @@ class HarvestUpgradeAutoClick extends Upgrade {
   }
 
   costIncrease(){
-    this.cost = this.cost * 1.5;
+    this.cost = super.costIncrease(this.costMult);
   }
 }
 

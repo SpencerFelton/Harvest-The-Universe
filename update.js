@@ -43,18 +43,18 @@ function loop(){
 }
 
 function updatePlayerInfo(){
-  $("#money").text("$" + player.getMoney());
-  $("#harvestPower").text("Harvesting Power (HP): " + player.getHarvestPower());
+  $("#money").text("$" + toENotation(player.getMoney()));
+  $("#harvestPower").text("Harvesting Power (HP): " + toENotation(player.getHarvestPower()));
   $("#critChance").text("Crit Chance: " + player.getCritChance() + "%");
 }
 
 function updateResourceInfo(){
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
-  $("#hpValue").text(currentResource.currentHp);
+  $("#hpValue").text(toENotation(currentResource.currentHp));
   $("#hpBar").css("width",currentResource.hpPercent()+"%");
-  $("#resourceDefence").text("Defence: " + currentResource.defence);
-  $("#resourceReward").text("Reward: $" + currentResource.reward);
+  $("#resourceDefence").text("Defence: " + toENotation(currentResource.defence));
+  $("#resourceReward").text("Reward: $" + toENotation(currentResource.reward));
 }
 
 function updateUpgradeInfo(){ // update cost / description info for each upgrade

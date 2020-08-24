@@ -9,7 +9,7 @@ function toENotation(number){ // if a number is less than 1 million, leave it as
     return number.toFixed(0);
   }
   else {
-    return number.toPrecision(3);
+    return number.toPrecision(3); // 3 sig fig
   }
 }
 

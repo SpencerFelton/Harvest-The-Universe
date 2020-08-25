@@ -14,7 +14,7 @@ class Player {
   updateHarvestPower(){
     this.harvestPower = (this.baseHarvesterPower + this.clickIncr) * this.clickMult;
   }
-
+  // setters and getters
   getMoney(){
     return this.money;
   }

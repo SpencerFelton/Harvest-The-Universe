@@ -42,13 +42,13 @@ function loop(){
   update();
 }
 
-function updatePlayerInfo(){
+function updatePlayerInfo(){ // update info related to the player
   $("#money").text("$" + toENotation(player.getMoney()));
   $("#harvestPower").text("Harvesting Power (HP): " + toENotation(player.getHarvestPower()));
   $("#critChance").text("Crit Chance: " + player.getCritChance() + "%");
 }
 
-function updateResourceInfo(){
+function updateResourceInfo(){ // update info related to the current resouce
   $("#resourceName").text(currentResource.name);
   $("#resourceImg").attr("src", currentResource.url);
   $("#hpValue").text(toENotation(currentResource.currentHp));

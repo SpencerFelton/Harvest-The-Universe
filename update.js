@@ -78,7 +78,7 @@ function updateUpgradeInfo(){ // update cost / description info for each upgrade
 }
 
 
-function updateResourceDisplay(currentResource){
+function updateResourceDisplay(currentResource){ //helper function
   updatePlayerInfo();
   updateResourceInfo();
   updateUpgradeInfo();

@@ -2,8 +2,6 @@ $("document").ready(function(){
 
   $("#resourceImg").click(function(){ // onclick function when clicking on resource to remove resource health and set reward if killed
     if(player.rollCrit()){
-      console.log("crit");
-      console.log(player.getHarvestPower() * player.critDmg);
       currentResource.setHp(player.getHarvestPower() * player.critDmg);
     }
     else{

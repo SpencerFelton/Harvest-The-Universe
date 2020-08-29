@@ -1,6 +1,6 @@
 var resourceLocation = "resources/"
 
-resourceInfoJSON = [
+resourceInfoJSON = [ // array of all json objects
   {"id":0, "name":"Man", "hp":10, "defence":0, "reward":1, "url":resourceLocation+"human.png"},
   {"id":1, "name":"Long Man", "hp":100, "defence":1, "reward":5, "url":resourceLocation+"slinkyHuman.png"},
   {"id":2, "name":"Longest Man", "hp":250, "defence":5, "reward":10, "url":resourceLocation+"longestBoi.png"},

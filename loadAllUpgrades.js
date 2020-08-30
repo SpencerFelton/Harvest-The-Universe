@@ -1,4 +1,4 @@
-upgradeInfoJSON = [
+upgradeInfoJSON = [ //array of all upgrades
   {"id":0, "name":"Harvest Upgrade Power", "cost": 1},
   {"id":1, "name":"Harvest Upgrade Power Upgrade", "cost": 15},
   {"id":2, "name":"Harvest Upgrade Crit Chance", "cost": 20},
@@ -11,7 +11,7 @@ function loadUpgrades(array){ // should only run once when the page is first loa
   var allUpgrades = []
   for (upgrades in array){
     var currentUpgrade = upgradeInfoJSON[upgrades];
-    switch(currentUpgrade.id){
+    switch(currentUpgrade.id){ // each id has its own unique ID
       case 0:
         var upgrade = new HarvestUpgradePowerPlus(currentUpgrade.id, currentUpgrade.name, currentUpgrade.cost);
         allUpgrades.push(upgrade);
